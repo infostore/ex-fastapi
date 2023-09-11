@@ -1,0 +1,19 @@
+// https://containers.dev/implementors/json_reference/#image-specific
+{	
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "fastapi",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	// https://containers.dev/features
+    "features": {},
+    "overrideCommand": false,
+    "forwardPorts": [8000],
+	"portsAttributes": {
+		"8000": {
+			"label": "FastAPI",
+			"requireLocalPort": true,
+			"onAutoForward": "ignore"
+		}
+	},
+    "customizations": {},
+	"postCreateCommand": "pip install --user -r requirements.txt"
+}
